@@ -5,7 +5,7 @@
 set -euo pipefail
 
 OWNER="PurnaChandraPanda"      # ← adapt
-REPO="azureml-managed-endpoint-for-byoc"          # ← adapt
+REPO="automl-regression-house-pricing-in-pipeline"          # ← adapt
 BRANCH="main"
 MSG="${1:-}"
 
