@@ -26,6 +26,8 @@ Please find the sample defined in [automl-regression-house-pricing-in-pipeline.i
 ![](.media/job-schedule2.png)
 ![](.media/job-schedule3.png)
 
+If there's a need to review or extract metrics of child job runs, refer the [mlflow search api](./job-metrics/) usage.
+
 # Reference
 - Great number of automl samples wrapped in a pipeline - available at [1h_automl_in_pipeline](https://github.com/Azure/azureml-examples/tree/main/sdk/python/jobs/pipelines/1h_automl_in_pipeline)
 - [Azureml schedule jobs](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-schedule-pipeline-job?view=azureml-api-2&tabs=python#create-a-schedule) documentation
