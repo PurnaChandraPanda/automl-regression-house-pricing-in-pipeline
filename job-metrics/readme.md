@@ -35,7 +35,7 @@ python read_job_details.py
 - Think of `job` in azureml as the schematic definition with data file, dependencies, scripts, which is used to submit runs on azureml platform.
 - Think of `run` in azureml as the actual run instance or runtime outcome of the job submitted.
 - This `run` detail can easily be tracked using mlflow.
-- Though v1 and v2 kind of job schema came in azureml, the `run` infrastructure on azurem side for job is still the same. So, mlflow will help track both.
+- Though v1 and v2 kind of job schema came in azureml, the `run` infrastructure on azureml side for job is still the same. So, mlflow will help track both.
 
 ```
 # Lists all experiments visible in the current tracking URI
