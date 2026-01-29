@@ -1,3 +1,9 @@
+## Topics covered
+- [Find the job id from ML Studio](#find-the-job-id-from-ml-studio)
+- [Run the script to load child job metrics](#run-the-script-to-load-child-job-metrics)
+- [Read job details in AzureML workspace scope](#read-job-details-in-azureml-workspace-scope)
+- [Read job details with model association](#read-job-details-with-model-association)
+
 
 ## Find the job id from ml studio
 ![](../.media/find-job-runid-from-experiment.png)
@@ -64,6 +70,37 @@ for e in experiments:
 - **How to run it?**
 ```
 python read_all_jobs.py
+```
+
+## Read job details with model association
+In order to validate if ml model association with job runs, few of the activities to think like:
+- Case 1: Using fsspec, check the run artifact storage for model files.
+- Case 2: Using models.list(), check models for job_name (or run_id) association. Model will be associated with artifact storage of the run.
+- In either case, artifact storage validation for the run is needed.
+
+```
+def _run_has_model(run_id: str) -> bool:
+    """Check if the given run has model association by checking its artifact storage."""
+    ..
+    ..
+    
+    # Instatiate the filesystem using uri
+    fs = AzureMachineLearningFileSystem(uri = uri_path)
+
+    # glob for recursive listing
+    paths = fs.glob("**/*model*")
+
+    # Check if any model related files/ folders found. Return its results.
+    if paths:
+        return True
+    else:        
+        return False
+```
+
+- **How to run it?**
+```
+pip install azureml-fsspec
+python read_all_jobs_with_model.py
 ```
 
 ## Reference for mlflow search

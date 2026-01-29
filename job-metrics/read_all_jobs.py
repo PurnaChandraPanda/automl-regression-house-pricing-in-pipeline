@@ -1,6 +1,7 @@
 from azure.ai.ml import MLClient
 from azure.identity import DefaultAzureCredential
 import mlflow
+from mlflow.artifacts import list_artifacts
 import os
 
 # If in azureml compute or job, mlflow tracking URI value is already set in env variable
@@ -33,8 +34,8 @@ for e in experiments:
         print(f"\trun_id={run.info.run_id}\tstatus={run.info.status}")
 
         # # Uncomment below to debug specific run - just in case more verbose info needed
-        # print("run\t", run)
-
+        # if run.info.run_id == "khaki_raisin_brh43krrpn_0":
+        #     print("run\t", run)
 print("Done")
 
 
